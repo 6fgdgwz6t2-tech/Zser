@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<title>NK Real Estate | Projects</title>
+<style>
+:root{--navy:#0f172a;--navy2:#172554;--green:#15803d;--green2:#dcfce7;--bg:#f1f5f9;--card:#fff;--muted:#64748b;--line:#e2e8f0;--text:#0f172a}
+*{box-sizing:border-box}html{font-size:16px}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif}
+button,input,select{font:inherit}button{cursor:pointer}
+.app{max-width:1500px;margin:auto;min-height:100vh}
+.topbar{background:var(--navy);color:#fff;padding:24px clamp(16px,3vw,38px) 20px;position:relative}
+.brandrow{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:14px}.logo{width:54px;height:54px;border-radius:16px;background:#fff;color:var(--navy);display:grid;place-items:center;font-weight:900;font-size:23px}
+.brand h1{font-size:clamp(22px,3vw,32px);margin:0}.brand p{margin:5px 0 0;color:#cbd5e1;font-size:14px}
+.localtag{border:1px solid #475569;color:#e2e8f0;padding:9px 13px;border-radius:999px;font-size:13px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.search{flex:1;min-width:220px;background:#fff;border:0;border-radius:12px;padding:13px 15px;color:#0f172a;outline:none}
+.select{border:1px solid #475569;background:#1e293b;color:#fff;border-radius:12px;padding:12px;min-width:170px}
+.content{padding:clamp(14px,2.5vw,32px)}
+.summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:22px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px}.stat .label{color:var(--muted);font-size:13px}.stat .num{font-size:clamp(21px,2vw,29px);font-weight:800;margin-top:7px}
+.project{background:#fff;border:1px solid var(--line);border-radius:20px;margin-bottom:22px;overflow:hidden;box-shadow:0 5px 18px #0f172a08}
+.projecthead{background:linear-gradient(120deg,var(--navy),#1e3a5f);color:#fff;padding:22px;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.projecttitle h2{margin:0;font-size:clamp(22px,2.4vw,30px);letter-spacing:.2px;direction:ltr;text-align:right}
+.projecttitle .developer{color:#cbd5e1;margin-top:6px;font-size:14px}
+.projecttitle .range{display:inline-flex;align-items:center;gap:6px;margin-top:12px;background:#ffffff12;border:1px solid #ffffff30;border-radius:10px;padding:8px 11px;color:#fff;font-size:13px;font-weight:700}
+.projecttitle .range strong{font-size:15px;color:#bbf7d0}
+.projecthead .details{width:100%;grid-template-columns:repeat(4,minmax(0,1fr));margin:8px 0 0;flex-basis:100%}.projecthead .detail{background:#ffffff12;border:1px solid #ffffff30;color:#fff}.projecthead .detail span{color:#cbd5e1}.projecthead .detail b{color:#fff;display:block;overflow-wrap:anywhere}.projecthead .head-main{display:flex;direction:ltr;justify-content:space-between;align-items:flex-start;gap:18px;width:100%}.projecthead .cash{order:0}.projecthead .projecttitle{order:1;flex:1;text-align:right;direction:rtl}.projecthead .cash{margin-right:auto}
+.projecthead .actions{width:100%;margin:0;flex-basis:100%}.projecthead .action{background:#fff;color:#0f172a}.projecthead .action.primary{background:#fff;color:#0f172a;border-color:#fff}
+.area strong,.unitarea{font-weight:900;font-size:1.15em;color:var(--text)}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.pill{display:inline-flex;align-items:center;gap:5px;background:#ffffff15;border:1px solid #ffffff2a;padding:7px 10px;border-radius:999px;font-size:12px;color:#f8fafc}
+.cash{background:#166534;border:1px solid #4ade80;border-radius:14px;padding:13px 18px;min-width:142px;text-align:center}.cash small{display:block;color:#dcfce7;font-size:12px}.cash strong{display:block;font-size:25px;margin-top:4px}
+.projectbody{padding:20px}
+.details{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:18px}
+.detail{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:12px}.detail span{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}.detail b{font-size:14px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.action{background:#fff;border:1px solid #cbd5e1;color:var(--navy);padding:9px 13px;border-radius:10px;font-size:13px;font-weight:700}.action.primary{background:var(--navy);border-color:var(--navy);color:#fff}.action.green{background:var(--green2);border-color:#86efac;color:#166534}
+.sectiontitle{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:16px 0 12px}.sectiontitle h3{margin:0;font-size:18px}.sectiontitle span{color:var(--muted);font-size:12px}
+.units{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.unit{border:1px solid var(--line);border-radius:15px;padding:15px;background:#fff;min-width:0}
+.unithead{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.unittype{font-weight:800;font-size:15px}.area{color:var(--muted);font-size:13px;margin-top:5px}.price{font-weight:900;font-size:22px;direction:ltr;text-align:right;white-space:nowrap}.currency{font-size:11px;color:var(--muted);font-weight:500}
+.unitline{height:1px;background:var(--line);margin:13px 0}.downrow{display:flex;justify-content:space-between;align-items:center;gap:8px}.downrow span{font-size:12px;color:var(--muted)}.downrow strong{font-size:15px;color:#166534;text-align:left;direction:ltr}
+.unitfoot{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:13px}.smallbtn{border:1px solid #cbd5e1;background:#f8fafc;color:var(--navy);padding:7px 10px;border-radius:8px;font-size:12px;font-weight:700}
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}.plan{border:1px solid var(--line);border-radius:14px;padding:15px;background:#f8fafc}.plan h4{margin:0 0 8px;font-size:15px}.plan p{margin:0;color:#475569;font-size:13px;line-height:1.7}
+.note{background:#fffbeb;border:1px solid #fde68a;color:#854d0e;padding:12px 14px;border-radius:12px;font-size:13px;line-height:1.6;margin-top:14px}
+.empty{display:none;text-align:center;color:var(--muted);padding:35px}
+footer{text-align:center;color:var(--muted);padding:8px 16px 28px;font-size:12px}
+.modalback{position:fixed;inset:0;background:#020617a8;display:none;align-items:center;justify-content:center;padding:16px;z-index:10}
+.modal{width:min(520px,100%);background:#fff;border-radius:18px;padding:22px;max-height:90vh;overflow:auto}.modal h3{margin:0 0 15px}.field{display:grid;gap:6px;margin:12px 0}.field label{font-size:13px;color:#475569}.field input,.field select{width:100%;border:1px solid #cbd5e1;border-radius:10px;padding:12px;background:#fff;color:#0f172a}.modalbuttons{display:flex;gap:8px;margin-top:18px}.modalbuttons button{flex:1;padding:12px;border-radius:10px;border:1px solid #cbd5e1;background:#fff}.modalbuttons .save{background:var(--navy);color:#fff;border-color:var(--navy)}
+@media(max-width:900px){.projecthead .details{grid-template-columns:repeat(2,minmax(0,1fr))}.summary{grid-template-columns:repeat(2,minmax(0,1fr))}.units{grid-template-columns:repeat(2,minmax(0,1fr))}.details{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.projecthead .head-main{gap:10px}.projecthead .cash{min-width:112px;padding:10px}.projecthead .cash strong{font-size:20px}.projecthead .details{grid-template-columns:repeat(2,minmax(0,1fr))}.topbar{padding:18px 14px}.content{padding:12px}.summary{gap:8px}.stat{padding:13px}.units{grid-template-columns:1fr}.projecthead{padding:17px}.projectbody{padding:13px}.plans{grid-template-columns:1fr}.select{flex:1}.cash{min-width:120px}.price{font-size:21px}}
+@media(min-width:1000px){.projectbody{padding:26px}.unit{padding:18px}.projecthead{padding:26px}.details{gap:14px}.units{gap:15px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+ <div class="brandrow">
+  <div class="brand"><div class="logo">NK</div><div><h1>NK Real Estate</h1><p>Project Database · Local Offline Version</p></div></div>
+  <div class="localtag">● يعمل بدون حساب أو قاعدة بيانات سحابية</div>
+ </div>
+ <div class="toolbar">
+  <input class="search" id="search" type="search" placeholder="ابحث باسم المشروع أو المطور أو نوع الوحدة أو المساحة..." aria-label="بحث">
+  <select class="select" id="areaFilter" aria-label="تصفية حسب المنطقة"><option value="">كل المناطق</option><option>New Cairo</option><option>New Heliopolis</option><option>Mostakbal City</option></select>
+  <select class="select" id="typeFilter" aria-label="تصفية حسب نوع الوحدة"><option value="">كل أنواع الوحدات</option><option>Villa</option><option>Standalone Villa</option><option>iVilla</option><option>Town House</option><option>Twin House</option><option>Twin Villa</option><option>Apartment</option><option>Family House</option><option>Other</option></select>
+  <button class="select" id="langToggle" type="button" style="min-width:120px">English</button>
+ </div>
+</header>
+<main class="content">
+ <section class="summary">
+  <div class="stat"><div class="label tr" data-ar="المشروعات المسجلة" data-en="Projects">المشروعات المسجلة</div><div class="num" id="projectCount">11</div></div>
+  <div class="stat"><div class="label tr" data-ar="الوحدات المسجلة" data-en="Units">الوحدات المسجلة</div><div class="num" id="unitCount">—</div></div>
+  <div class="stat"><div class="label tr" data-ar="واجهة مناسبة" data-en="Responsive layout">واجهة مناسبة</div><div class="num">iPad + iPhone</div></div>
+  <div class="stat"><div class="label tr" data-ar="التخزين" data-en="Storage">التخزين</div><div class="num">محلي</div></div>
+ </section>
+ <div id="projects"></div>
+ <div class="empty" id="empty">مفيش نتائج مطابقة للبحث.</div>
+</main>
+<footer>NK Real Estate · نسخة مستقلة بدون خدمات سحابية · تُحفظ تعديلات المشروع والوحدات محليًا على هذا الجهاز.</footer>
+</div>
+<div class="modalback" id="modalback" role="dialog" aria-modal="true">
+ <div class="modal">
+  <h3>تعديل بيانات الوحدة</h3>
+  <div class="field"><label for="editType">نوع الوحدة</label><input id="editType"></div>
+  <div class="field"><label for="editArea">المساحة (م²)</label><input id="editArea" type="number" min="1"></div>
+  <div class="field"><label for="editPrice">السعر بالجنيه</label><input id="editPrice" type="number" min="0"></div>
+  <div class="field"><label for="editDp">نسبة المقدم %</label><input id="editDp" type="number" min="0" max="100" step="0.5"></div>
+  <div class="field"><label for="editUnitDelivery">التسليم</label><input id="editUnitDelivery"></div>
+  <div class="field"><label for="editUnitFinishing">التشطيب</label><input id="editUnitFinishing"></div>
+  <div class="field"><label for="editUnitBeds">عدد غرف النوم</label><input id="editUnitBeds" type="number" min="0"></div>
+  <div class="field"><label for="editUnitLand">مساحة الأرض (إن وجدت)</label><input id="editUnitLand" type="number" min="0"></div>
+  <div class="field"><label for="editUnitExtra">تفاصيل إضافية</label><input id="editUnitExtra"></div>
+  <div class="modalbuttons"><button id="cancelEdit">إلغاء</button><button class="save" id="saveEdit">حفظ التعديل</button></div>
+ </div>
+</div>
+<div class="modalback" id="projectEditModal" role="dialog" aria-modal="true">
+ <div class="modal">
+  <h3>تعديل بيانات المشروع</h3>
+  <div class="field"><label for="projName">اسم المشروع</label><input id="projName"></div>
+  <div class="field"><label for="projDeveloper">المطور</label><input id="projDeveloper"></div>
+  <div class="field"><label for="projLocation">الموقع</label><input id="projLocation"></div>
+  <div class="field"><label for="projType">أنواع الوحدات / تصنيف المشروع</label><input id="projType"></div>
+  <div class="field"><label for="projFinishing">التشطيب</label><input id="projFinishing"></div>
+  <div class="field"><label for="projDelivery">التسليم</label><input id="projDelivery"></div>
+  <div class="field"><label for="projDp">المقدم</label><input id="projDp"></div>
+  <div class="field"><label for="projInstallment">مدة الأقساط</label><input id="projInstallment"></div>
+  <div class="field"><label for="projCash">خصم الكاش</label><input id="projCash"></div>
+  <div class="field"><label for="projMaintenance">الصيانة</label><input id="projMaintenance"></div>
+  <div class="field"><label for="projNotes">ملاحظات المشروع</label><input id="projNotes"></div>
+  <div class="modalbuttons"><button id="cancelProjectEdit">إلغاء</button><button class="save" id="saveProjectEdit">حفظ بيانات المشروع</button></div>
+  <p style="font-size:12px;color:#64748b;line-height:1.6">تُحفظ التعديلات على هذا الجهاز والمتصفح باستخدام التخزين المحلي.</p>
+ </div>
+</div>
+<div class="modalback" id="filesModal" role="dialog" aria-modal="true">
+ <div class="modal">
+  <h3 id="filesTitle">ملفات المشروع</h3>
+  <p id="filesHint" style="font-size:13px;color:#64748b;line-height:1.6;margin-top:-5px">أضف أو احذف ملفات PDF والصور لهذا المشروع. الملفات تُحفظ على هذا الجهاز والمتصفح فقط.</p>
+  <div class="field"><label for="pdfUpload">إضافة ملف PDF</label><input id="pdfUpload" type="file" accept="application/pdf,.pdf"></div>
+  <div class="field"><label for="photoUpload">إضافة صور</label><input id="photoUpload" type="file" accept="image/*" multiple></div>
+  <div id="projectFilesList" style="display:grid;gap:8px;margin-top:14px"></div>
+  <div class="modalbuttons"><button id="closeFiles">إغلاق</button></div>
+ </div>
+</div>
+
+<div class="modalback" id="previewModal" role="dialog" aria-modal="true" style="z-index:20">
+ <div class="modal" style="width:min(1000px,100%);height:min(88vh,900px);display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px"><h3 id="previewTitle" style="margin:0">Preview</h3><button class="smallbtn" onclick="closePreview()">Close</button></div>
+  <div id="previewContent" style="flex:1;min-height:0;overflow:auto;display:grid;place-items:center"></div>
+ </div>
+</div>
+<script>
+const projects = [
+{id:'zomra',name:'Zomra',developer:'Nations of Sky',location:'New Cairo',type:'Town House · Twin Villa · Standalone Villa',finishing:'Core & Shell',delivery:'3 سنوات',dpText:'5%',installment:'غير محدد',cash:'غير محدد',maintenance:'غير محدد',notes:'التشطيب Core & Shell والاستلام بعد 3 سنوات حسب المعلومات المقدمة. مدة التقسيط والصيانة وخصم الكاش غير محددة.',units:[
+{type:'Town House',area:215,price:29200000,dp:5,delivery:'بعد 3 سنوات',finishing:'Core & Shell'},
+{type:'Twin Villa',area:270,price:41000000,dp:5,delivery:'بعد 3 سنوات',finishing:'Core & Shell'},
+{type:'Standalone Villa',area:230,price:41000000,dp:5,delivery:'بعد 3 سنوات',finishing:'Core & Shell'}]},
+{id:'mountain-view-11',name:'Mountain View 1.1',developer:'Mountain View Developments',location:'New Cairo',type:'Villas',finishing:'Fully Finished',delivery:'Ready to Move',dpText:'20% للفيلات المستقلة، و5% للـ iVilla',installment:'غير محدد',cash:'غير محدد',maintenance:'غير محدد',notes:'البيانات المضافة حسب المعلومات المقدمة: الاستلام فوري والتشطيب كامل. مدة التقسيط والصيانة والخصم النقدي غير محددة.',units:[
+{type:'Standalone Villa',area:255,price:55000000,dp:20,delivery:'Ready to Move',finishing:'Fully Finished'},
+{type:'Standalone Villa',area:670,price:200000000,dp:20,delivery:'Ready to Move',finishing:'Fully Finished'},
+{type:'iVilla',area:216,price:26000000,dp:5,delivery:'Ready to Move',finishing:'Fully Finished',extra:'مساحة وسعر بداية حسب البيانات المقدمة'},
+{type:'Town House',area:210,price:41000000,dp:20,beds:3,delivery:'Ready to Move',finishing:'Fully Finished'}]},
+{id:'lavista',name:'La Vista City',developer:'La Vista Developments',location:'New Cairo',type:'Villas Only',finishing:'Fully Finished',delivery:'Ready to Move',dpText:'10% أو 20% حسب الوحدة',installment:'8 سنوات',cash:'31.5%',maintenance:'10%',notes:'خصم الكاش لا يُفترض تطبيقه على خطط التقسيط. لا توجد رسوم إدارية مؤكدة في البيانات المتاحة.',units:[
+{type:'Town House',area:216,price:30000000,dp:10,beds:3},{type:'Town House',area:253,price:34000000,dp:10,beds:4},{type:'Twin House',area:275,price:36800000,dp:10,beds:4},{type:'Standalone Villa',area:303,price:44800000,dp:20,beds:3},{type:'Standalone Villa',area:336,price:51200000,dp:20,beds:3},{type:'Standalone Villa',area:424,price:63900000,dp:20,beds:5},{type:'Standalone Villa',area:450,price:66500000,dp:20,beds:5}]},
+{id:'eastshire',name:'Eastshire',developer:'El Qamzi',location:'New Cairo',type:'Townhouses',finishing:'Core & Shell',delivery:'خلال سنة حسب بيانات الملفات',dpText:'10%',installment:'7 سنوات',cash:'غير محدد',maintenance:'8%',notes:'الأسعار من بيانات الوحدات المرفقة ويجب تأكيد التوافر.',units:[
+{type:'Townville',area:166,price:23062000,dp:10},{type:'Shireville',area:261,price:34860000,dp:10},{type:'Renaissance Townhouse',area:285,price:41751000,dp:10}]},
+{id:'grova',name:'Grova East Hills',developer:'Hassan Allam Holding',location:'New Cairo',type:'Villas Only',finishing:'Fully Finished',delivery:'3 سنوات',dpText:'5% + 5% بعد 3 شهور',installment:'8 سنوات',cash:'25%',maintenance:'7%',notes:'المساحات والأراضي مأخوذة من البيانات المدخلة والصور المرجعية؛ تأكد من التوافر قبل النشر.',units:[
+{type:'Town House Middle · BUA 263 / Land 310',area:263,land:310,price:34500000,dp:5},{type:'Town House Corner · BUA 263 / Land 395',area:263,land:395,price:37000000,dp:5},{type:'Twin House · BUA 287 / Land 405',area:287,land:405,price:40500000,dp:5},{type:'Villa V1 · BUA 332 / Land 440',area:332,land:440,price:47900000,dp:5},{type:'Villa V2 · BUA 397 / Land 580',area:397,land:580,price:62400000,dp:5},{type:'Villa V3 · BUA 465 / Land 630',area:465,land:630,price:100300000,dp:5}]},
+{id:'townside',name:'El Patio TownSide',developer:'La Vista Developments',location:'New Cairo',type:'Villas Only',finishing:'Core & Shell',delivery:'4 سنوات',dpText:'5%',installment:'8 سنوات',cash:'25%',maintenance:'8%',notes:'EOI: Side House 300,000 جنيه؛ باقي الفيلات 400,000 جنيه. مشروع منفصل عن El Patio Town.',units:[
+{type:'Side House',area:225,land:'237–335',price:31190000,dp:5,extra:'3 Bedrooms + Living'},{type:'Icon Villa',area:225,land:'262–351',price:35800000,dp:5,extra:'3 Bedrooms + Living'},{type:'Prime Villa',area:265,land:'299–368',price:40190000,dp:5,extra:'4 Bedrooms + Living + Nanny’s Room'},{type:'Grande Villa',area:310,land:'349–374',price:49430000,dp:5,extra:'4 Master Bedrooms + Dressing + Nanny’s Room + Living'},{type:'Signature Villa',area:411,land:'508–579',price:70430000,dp:5,extra:'Office + 4 Master Bedrooms + Living'}]},
+{id:'patio-town',name:'El Patio Town',developer:'La Vista Developments',location:'New Cairo',type:'Townhouses',finishing:'غير مؤكد',delivery:'سنتان (مبدئيًا حسب طلب المستخدم؛ المصدر يذكر 1/1/2028)',dpText:'5% + 5%',installment:'7 سنوات حسب المصدر المتاح',cash:'غير محدد',maintenance:'8%',notes:'Garden Town Middle: السعر متعارض بين 30M في جدول الأقساط و34M في صفحة الوحدة. تم عرض السعر كنطاق إلى حين التأكيد. Town House Corner 26F سعره 38M، BUA 245 م²، أرض 269 م².',units:[
+{type:'Garden Town Middle',area:215,land:147,price:34000000,priceMin:30000000,dp:5,extra:'السعر متعارض في المصدر: 30M أو 34M'},{type:'Town House Corner 26F',area:245,land:269,price:38000000,dp:5}]},
+{id:'stei8ht',name:'STEI8HT',developer:'LMD',location:'New Cairo',type:'Standalone Villas',finishing:'Core & Shell – Red Brick',delivery:'2028',dpText:'5% + 5% بعد 3 شهور',installment:'7 سنوات',cash:'غير محدد',maintenance:'غير محدد',notes:'تم اعتماد وحدتين فقط حسب اختيار المستخدم. الأسعار حسب الصور المقدمة، والتوافر يحتاج تأكيد.',units:[
+{type:'Standalone Villa',area:410,price:61000000,dp:5},{type:'Standalone Villa',area:486,price:81000000,dp:5}]},
+{id:'solana',name:'Solana East',developer:'ORA Developments',location:'New Cairo',type:'Villas',finishing:'Fully Finished',delivery:'3 سنوات حسب الصورة',dpText:'5%',installment:'8 سنوات',cash:'غير محدد',maintenance:'غير محدد',notes:'الأسعار مأخوذة من الصورة المرسلة، وليست تأكيدًا للتوافر الحالي.',units:[
+{type:'Town House',area:210,price:44000000,dp:5},{type:'Twin Villa',area:240,price:54000000,dp:5},{type:'Standalone Villa',area:369,price:119000000,dp:5}]},
+{id:'eastville',name:'EASTVILLE',developer:'Ajna Developments',location:'New Cairo',type:'Villas Only',finishing:'غير موضح بالمصدر',delivery:'سنتان أو 4 سنوات حسب الوحدة',dpText:'5% (عرض) أو 10% لبعض الخطط',installment:'9 أو 5 سنوات للاستلام سنتين؛ 10 أو 6 سنوات للاستلام 4 سنوات',cash:'25% لبعض الخطط',maintenance:'غير موضح بالمصدر',notes:'الخصم 25% مرتبط بخطط معينة حسب الصورة. مقدم 5% محسوب مبدئيًا على السعر المعروض. سعر 160 م² Middle ظاهر بصورة غير مكتملة وتم إدخاله 12.45M مبدئيًا.',units:[
+{type:'Town House Middle',area:160,price:12450000,dp:5,delivery:'4 سنوات',extra:'السعر في الصورة غير مكتمل؛ 12.45M مبدئيًا'},{type:'Town House Corner',area:160,price:13800000,dp:5,delivery:'4 سنوات'},{type:'Town House Middle',area:190,price:16430000,priceMax:20614000,dp:5,delivery:'2 أو 4 سنوات'},{type:'Town House Corner',area:190,price:18440000,priceMax:21000000,dp:5,delivery:'2 أو 4 سنوات'},{type:'Town House Middle',area:230,price:20277000,priceMax:22732000,dp:5,delivery:'2 أو 4 سنوات'},{type:'Town House Corner',area:230,price:22326000,priceMax:24717000,dp:5,delivery:'2 أو 4 سنوات'},{type:'Twin House',area:290,price:32000000,dp:5,delivery:'4 سنوات'}],
+plans:[['استلام سنتين','5% مقدم + 5% بعد 3 شهور + 10% عند الاستلام بعد سنتين؛ الباقي أقساط متساوية على 9 سنوات.'],['خطة بديلة مع خصم','10% مقدم، أقساط متساوية على 5 سنوات، خصم 25%.'],['استلام 4 سنوات','5% مقدم وأقساط متساوية على 10 سنوات.'],['خطة بديلة مع خصم','10% مقدم، أقساط متساوية على 6 سنوات، خصم 25%.']]},
+{id:'sodic',name:'SODIC EAST – New Heliopolis',developer:'SODIC',location:'New Heliopolis',type:'Mixed Units',finishing:'يختلف حسب المرحلة والوحدة',delivery:'غير موضح بالمصدر',dpText:'5%',installment:'غير موضح بالمصدر',cash:'غير موضح بالمصدر',maintenance:'غير موضح بالمصدر',notes:'المراحل والبيانات من صور المستخدم. المقدم 5% حسب تأكيد المستخدم. تفاصيل التوافر والتسليم وخطة الأقساط تحتاج تأكيد.',units:[
+{type:'ORCHID · Villa · Core & Shell',area:395,price:69600000,dp:5},{type:'OAK · Apartment · Fully Finished',area:125,price:13700000,dp:5},{type:'HAZEL · Family House · Fully Finished',area:183,price:30900000,dp:5},{type:'HAZEL · Townhouse · Fully Finished',area:221,price:32900000,dp:5},{type:'HAZEL · Villa · Fully Finished',area:237,price:44700000,dp:5},{type:'ORCHID · Townhouse · Core & Shell',area:234,price:30300000,dp:5},{type:'ROSEWOOD · Family House · Core & Shell',area:183,price:28000000,dp:5},{type:'ROSEWOOD · Villa · Core & Shell',area:237,price:44700000,dp:5}]}
+];
+const money=n=>new Intl.NumberFormat('en-US',{maximumFractionDigits:0}).format(n);
+const shortMoney=n=>{if(n>=1000000){let m=n/1000000;return (Number.isInteger(m)?m:m.toFixed(3).replace(/0+$/,'').replace(/\.$/,'') )+'M'}return money(n)};
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let currentLang='ar';
+function areaRange(p){
+ const nums=p.units.map(u=>Number(u.area)).filter(n=>Number.isFinite(n)&&n>0);
+ if(!nums.length)return currentLang==='ar'?'غير محدد':'Not specified';
+ const min=Math.min(...nums),max=Math.max(...nums);
+ return min===max?`${min} m²`:`${min}–${max} m²`;
+}
+function calcDp(u){return Math.round(u.price*(u.dp??5)/100)}
+function normSearch(v){return String(v??'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[\s._·–—-]+/g,'').replace(/ة/g,'ه').replace(/أ|إ|آ/g,'ا')}
+function searchableUnit(u){const price=Number(u.price)||0,priceMax=Number(u.priceMax)||0;const priceTerms=[price,priceMax,shortMoney(price),shortMoney(priceMax),money(price),money(priceMax),`${price/1000000}m`,`${priceMax/1000000}m`].join(' ');return normSearch([u.type,u.area,u.land,u.beds,priceTerms,u.dp+'%',u.delivery||'',u.finishing||'',u.extra||''].join(' '))}
+function unitCategory(type){const t=normSearch(type);if(t.includes('ivilla'))return 'ivilla';if(t.includes('twin'))return 'twin';if(t.includes('townhouse')||t.includes('townville')||t.includes('renaissancetownhouse'))return 'town';if(t.includes('standalone'))return 'standalone';if(t.includes('apartment'))return 'apartment';if(t.includes('familyhouse'))return 'family';if(t==='villa'||t.startsWith('villa'))return 'villa';return 'other'}
+function queryUnitCategory(query){const q=normSearch(query);if(['townhouse','townhouses'].includes(q))return 'town';if(['twinhouse','twinvilla','twinvillas'].includes(q))return 'twin';if(['standalonevilla','standalonevillas'].includes(q))return 'standalone';if(['ivilla','ivillas'].includes(q))return 'ivilla';if(['familyhouse','familyhouses'].includes(q))return 'family';if(['apartment','apartments'].includes(q))return 'apartment';if(q==='villa'||q==='villas')return 'villa';return ''}
+function matches(p,query,area,type){const q=normSearch(query),projectHay=normSearch([p.name,p.developer,p.location].join(' '));const projectMatch=!q||projectHay.includes(q);const exactCat=queryUnitCategory(query);const unitMatch=!q||p.units.some(u=>exactCat?unitCategory(u.type)===exactCat:searchableUnit(u).includes(q));const typ=normSearch(type);const typeMatch=!typ||p.units.some(u=>{const c=unitCategory(u.type);if(typ==='villa')return c==='villa'||c==='standalone';if(typ==='standalonevilla')return c==='standalone';if(typ==='townhouse')return c==='town';if(typ==='twinhouse')return c==='twin';if(typ==='ivilla')return c==='ivilla';if(typ==='other')return c==='other';if(typ==='familyhouse')return c==='family';return normSearch(u.type).includes(typ)});return (!q||projectMatch||unitMatch)&&(!area||p.location===area)&&typeMatch}
+function render(){
+ const q=document.getElementById('search').value.trim(),a=document.getElementById('areaFilter').value,t=document.getElementById('typeFilter').value;
+ const filtered=projects.filter(p=>matches(p,q,a,t));let total=0;
+ document.getElementById('projects').innerHTML=filtered.map(p=>{
+ total+=p.units.length;
+ const projectText=normSearch([p.name,p.developer,p.location].join(' '));const queryNorm=normSearch(q);const projectQuery=!!queryNorm&&projectText.includes(queryNorm);const exactCat=queryUnitCategory(q);const typeNorm=normSearch(t);const unitSearchOnly=!!queryNorm&&!projectQuery;const visibleUnits=p.units.map((u,i)=>({u,i})).filter(({u})=>(!unitSearchOnly||(exactCat?unitCategory(u.type)===exactCat:searchableUnit(u).includes(queryNorm)))&&(!typeNorm||(()=>{const c=unitCategory(u.type);if(typeNorm==='villa')return c==='villa'||c==='standalone';if(typeNorm==='standalonevilla')return c==='standalone';if(typeNorm==='townhouse')return c==='town';if(typeNorm==='twinhouse')return c==='twin';if(typeNorm==='ivilla')return c==='ivilla';if(typeNorm==='other')return c==='other';if(typeNorm==='familyhouse')return c==='family';return normSearch(u.type).includes(typeNorm)})()));const units=visibleUnits.map(({u,i})=>`<article class="unit" data-unit="${esc(p.id)}-${i}">
+ <div class="unithead"><div><div class="unittype">${esc(u.type)}</div><div class="area"><span class="tr" data-ar="المساحة" data-en="Area">المساحة</span> <strong class="unitarea" dir="ltr" style="unicode-bidi:isolate;display:inline-block">${esc(u.area)} m²</strong>${u.land?` · <span class="tr" data-ar="الأرض" data-en="Land">الأرض</span> <strong dir="ltr" style="unicode-bidi:isolate;display:inline-block">${esc(u.land)} m²</strong>`:''}${u.beds?` · <strong>${u.beds}</strong> <span class="tr" data-ar="غرف نوم" data-en="beds">غرف نوم</span>`:''}</div></div>
+ <div><div class="price">${u.priceMax?esc(shortMoney(u.price))+'–'+esc(shortMoney(u.priceMax)):esc(shortMoney(u.price))}</div><div class="currency">EGP</div></div></div>
+ ${u.extra?`<div class="area" style="margin-top:8px">${esc(u.extra)}</div>`:''}
+ <div class="unitline"></div><div class="downrow"><span><span class="tr" data-ar="مقدم" data-en="Down Payment">مقدم</span> ${u.dp??5}%</span><strong>${money(calcDp(u))} EGP</strong></div>
+ <div class="unitfoot"><span class="area">${esc(u.delivery||p.delivery)}</span><button class="smallbtn tr" data-ar="تعديل" data-en="Edit" onclick="openEdit('${p.id}',${i})">تعديل</button></div></article>`).join('');
+ const plans=(p.plans||[]).map(pl=>`<div class="plan"><h4>${esc(pl[0])}</h4><p>${esc(pl[1])}</p></div>`).join('');
+ return `<section class="project" data-project="${p.id}"><div class="projecthead"><div class="head-main"><div class="cash"><small class="tr" data-ar="خصم الكاش" data-en="CASH DISCOUNT">خصم الكاش</small><strong>${esc(p.cash)}</strong></div><div class="projecttitle"><h2>${esc(p.name)}</h2><div class="developer">${esc(p.developer)}</div><div class="range"><span class="tr" data-ar="المساحات" data-en="Areas">المساحات</span><strong dir="ltr" style="unicode-bidi:isolate;display:inline-block">${esc(areaRange(p))}</strong></div><div class="meta"><span class="pill">${esc(p.location)}</span><span class="pill">${esc(p.type)}</span><span class="pill">${esc(p.finishing)}</span></div></div></div><div class="details">
+ <div class="detail"><span class="tr" data-ar="التسليم" data-en="Delivery">التسليم</span><b>${esc(p.delivery)}</b></div><div class="detail"><span class="tr" data-ar="مقدم" data-en="Down Payment">مقدم</span><b>${esc(p.dpText)}</b></div><div class="detail"><span class="tr" data-ar="مدة الأقساط" data-en="Installment Period">مدة الأقساط</span><b>${esc(p.installment)}</b></div><div class="detail"><span class="tr" data-ar="الصيانة" data-en="Maintenance">الصيانة</span><b>${esc(p.maintenance)}</b></div>
+ </div><div class="actions"><button class="action" onclick="openProjectFiles('${p.id}','pdf')">PDF</button><button class="action" onclick="openProjectFiles('${p.id}','photo')">Photos</button><button class="action primary" onclick="openProjectEdit('${p.id}')">Edit Project</button></div></div>
+ <div class="projectbody">
+ <div class="sectiontitle"><h3 class="tr" data-ar="الوحدات والأسعار" data-en="Units & Prices">الوحدات والأسعار</h3><span>${visibleUnits.length} <span class="tr" data-ar="وحدات" data-en="units">وحدات</span></span></div><div class="units">${units}</div>
+ ${plans?`<div class="sectiontitle"><h3 class="tr" data-ar="خطط السداد" data-en="Payment Plans">خطط السداد</h3><span class="tr" data-ar="حسب البيانات المتاحة" data-en="Based on available data">حسب البيانات المتاحة</span></div><div class="plans">${plans}</div>`:''}
+ ${p.notes?`<div class="note"><b>ملاحظات:</b> ${esc(p.notes)}</div>`:''}
+ </div></section>`;
+ }).join('');
+ document.getElementById('empty').style.display=filtered.length?'none':'block';
+ document.getElementById('unitCount').textContent=projects.reduce((n,p)=>n+p.units.length,0);
+ document.getElementById('projectCount').textContent=projects.length;
+ applyLanguage();
+}
+function applyLanguage(){
+ document.documentElement.lang=currentLang;
+ document.documentElement.dir=currentLang==='ar'?'rtl':'ltr';
+ document.getElementById('langToggle').textContent=currentLang==='ar'?'English':'العربية';
+ document.getElementById('search').placeholder=currentLang==='ar'?'ابحث باسم المشروع أو المطور أو نوع الوحدة أو المساحة...':'Search by project, developer, unit type, or area...';
+ document.getElementById('areaFilter').options[0].text=currentLang==='ar'?'كل المناطق':'All locations';
+ document.getElementById('typeFilter').options[0].text=currentLang==='ar'?'كل أنواع الوحدات':'All unit types';
+ document.querySelectorAll('.tr').forEach(el=>{const v=el.dataset[currentLang];if(v)el.textContent=v});
+ document.querySelectorAll('.localtag').forEach(el=>el.textContent=currentLang==='ar'?'● يعمل بدون حساب أو قاعدة بيانات سحابية':'● Works without an account or cloud database');
+ document.querySelectorAll('.note').forEach(el=>{const b=el.querySelector('b');if(b)b.textContent=currentLang==='ar'?'ملاحظات:':'Notes:'});
+ document.getElementById('empty').textContent=currentLang==='ar'?'مفيش نتائج مطابقة للبحث.':'No matching results.';
+ document.querySelector('footer').textContent=currentLang==='ar'?'NK Real Estate · نسخة مستقلة بدون خدمات سحابية · تُحفظ تعديلات المشروع والوحدات محليًا على هذا الجهاز.':'NK Real Estate · Standalone version without cloud services · project and unit edits are saved locally on this device.';
+ // Translate recurring project values and notes when switching to English.
+ const valueMap = {
+  'New Cairo':'New Cairo','New Heliopolis':'New Heliopolis',
+  'Villas Only':'Villas Only','Townhouses':'Townhouses','Town House':'Town House','Mixed Units':'Mixed Units',
+  'Fully Finished':'Fully Finished','Core & Shell':'Core & Shell','Core & Shell – Red Brick':'Core & Shell – Red Brick',
+  'Ready to Move':'Ready to Move','خلال سنة حسب بيانات الملفات':'Within 1 year (per unit files)','3 سنوات':'3 years','4 سنوات':'4 years','سنتان (مبدئيًا حسب طلب المستخدم؛ المصدر يذكر 1/1/2028)':'2 years (tentative; source lists 1/1/2028)','2028':'2028',
+  'غير محدد':'Not specified','غير موضح بالمصدر':'Not specified in source','غير مؤكد':'Unconfirmed','غير محدد':'Not specified','حسب البيانات المتاحة':'Based on available data','خلال سنة حسب بيانات الملفات':'Within 1 year (per unit files)','سنتان أو 4 سنوات حسب الوحدة':'2 or 4 years, depending on unit','سنتين أو 4 سنوات حسب الوحدة':'2 or 4 years, depending on unit','سنتان أو 4 سنوات':'2 or 4 years','خلال سنة':'Within 1 year',
+  '7 سنوات':'7 years','8 سنوات':'8 years','9 سنوات':'9 years','10 سنوات':'10 years','6 سنوات':'6 years','5 سنوات':'5 years','10% أو 20% حسب الوحدة':'10% or 20%, depending on unit','5%':'5%','10%':'10%','10% أو 20% حسب الوحدة':'10% or 20%, depending on unit','5% + 5% بعد 3 شهور':'5% + 5% after 3 months','5% (عرض) أو 10% لبعض الخطط':'5% (offer) or 10% for some plans',
+  '25%':'25%','31.5%':'31.5%','8%':'8%','7%':'7%',
+  'Villas Only':'Villas Only'
+ };
+ document.querySelectorAll('.detail b,.meta .pill,.unitfoot .area,.developer').forEach(el=>{
+  if(!el.dataset.originalText)el.dataset.originalText=el.textContent;
+  const original=el.dataset.originalText;
+  if(currentLang==='en')el.textContent=valueMap[original]||original;
+  else el.textContent=original;
+ });
+ document.querySelectorAll('.plan h4,.plan p,.note').forEach(el=>{
+  if(!el.dataset.originalText)el.dataset.originalText=el.textContent;
+  if(currentLang==='en'){
+   let s=el.dataset.originalText;
+   const dict={'استلام سنتين':'2-year delivery','خطة بديلة مع خصم':'Alternative plan with discount','استلام 4 سنوات':'4-year delivery','5% مقدم':'5% down payment','5% بعد 3 شهور':'5% after 3 months','10% عند الاستلام بعد سنتين':'10% upon delivery after 2 years','الباقي أقساط متساوية على 9 سنوات':'remaining balance in equal installments over 9 years','أقساط متساوية على 5 سنوات':'equal installments over 5 years','أقساط متساوية على 10 سنوات':'equal installments over 10 years','أقساط متساوية على 6 سنوات':'equal installments over 6 years','خصم 25%':'25% discount','ملاحظات:':'Notes:'};
+   Object.keys(dict).forEach(k=>s=s.split(k).join(dict[k]));
+   el.textContent=s;
+  } else el.textContent=el.dataset.originalText;
+ });
+}
+
+let fileProjectId=null;
+let fileMode='pdf';
+let fileDbPromise=null;
+function openFilesDb(){
+ if(fileDbPromise)return fileDbPromise;
+ fileDbPromise=new Promise((resolve,reject)=>{
+  if(!('indexedDB' in window)){reject(new Error('IndexedDB unavailable'));return}
+  const req=indexedDB.open('NKRealEstateProjectFiles',1);
+  req.onupgradeneeded=()=>{const db=req.result;if(!db.objectStoreNames.contains('files')){const s=db.createObjectStore('files',{keyPath:'id',autoIncrement:true});s.createIndex('projectId','projectId',{unique:false})}};
+  req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error||new Error('DB open failed'));
+ });
+ return fileDbPromise;
+}
+async function getProjectFiles(projectId){
+ const db=await openFilesDb();
+ return new Promise((resolve,reject)=>{const tx=db.transaction('files','readonly');const req=tx.objectStore('files').index('projectId').getAll(projectId);req.onsuccess=()=>resolve(req.result||[]);req.onerror=()=>reject(req.error)});
+}
+async function saveProjectFile(projectId,file,kind){
+ const db=await openFilesDb();
+ const record={projectId,kind,name:file.name,type:file.type||'',size:file.size,createdAt:Date.now(),blob:file};
+ return new Promise((resolve,reject)=>{const tx=db.transaction('files','readwrite');tx.objectStore('files').add(record);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});
+}
+async function deleteProjectFile(id){
+ const db=await openFilesDb();
+ return new Promise((resolve,reject)=>{const tx=db.transaction('files','readwrite');tx.objectStore('files').delete(Number(id));tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});
+}
+function prettySize(bytes){if(bytes<1024)return bytes+' B';if(bytes<1024*1024)return (bytes/1024).toFixed(0)+' KB';return (bytes/(1024*1024)).toFixed(1)+' MB'}
+async function openProjectFiles(projectId,kind='pdf'){
+ fileProjectId=projectId;fileMode=kind;
+ const p=projects.find(x=>x.id===projectId);
+ document.getElementById('filesTitle').textContent=(currentLang==='ar'?'ملفات مشروع ':'Project files: ')+p.name;
+ document.getElementById('pdfUpload').parentElement.style.display=kind==='pdf'?'grid':'none';
+ document.getElementById('photoUpload').parentElement.style.display=kind==='photo'?'grid':'none';
+ document.getElementById('filesHint').textContent=currentLang==='ar'
+  ?(kind==='photo'?'اختَر صورًا متعددة مرة واحدة. ستظهر كل الصور هنا في معرض واحد، ويمكنك فتح أي صورة أو حذفها.':'أضف عدة ملفات PDF. ستظهر كلها في قائمة واحدة ويمكنك فتح أي ملف داخل التطبيق أو حذفه.')
+  :(kind==='photo'?'Select multiple images at once. They will appear together in one gallery; open or delete any image.':'Add multiple PDF files. They will appear in one list; preview or delete any file.');
+ document.getElementById('filesModal').style.display='flex';
+ await renderProjectFiles();
+}
+async function renderProjectFiles(){
+ const list=document.getElementById('projectFilesList');
+ list.innerHTML='<div style="color:#64748b;font-size:13px">…</div>';
+ try{
+  const files=(await getProjectFiles(fileProjectId)).filter(f=>f.kind===fileMode);
+  if(!files.length){list.innerHTML=`<div style="padding:14px;border:1px dashed #cbd5e1;border-radius:12px;color:#64748b;font-size:13px">${currentLang==='ar'?(fileMode==='photo'?'لم تضف صورًا لهذا المشروع بعد. اختَر عدة صور من زر الإضافة.':'لم تضف ملفات PDF لهذا المشروع بعد. اختَر ملفًا أو أكثر من زر الإضافة.'):(fileMode==='photo'?'No photos added yet. Use the add button to select multiple images.':'No PDFs added yet. Use the add button to select one or more files.')}</div>`;return}
+  if(fileMode==='photo'){
+   list.style.display='grid';list.style.gridTemplateColumns='repeat(auto-fill,minmax(120px,1fr))';list.style.gap='10px';
+   list.innerHTML=files.map(f=>`<div style="border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;background:#f8fafc;min-width:0"><button onclick="viewProjectFile(${f.id})" style="display:block;width:100%;padding:0;border:0;background:transparent"><img id="photo-${f.id}" alt="${escapeHtml(f.name)}" style="width:100%;height:125px;object-fit:cover;display:block;background:#e2e8f0"><span style="display:block;padding:7px;font-size:12px;text-align:start;overflow-wrap:anywhere;color:#0f172a">${escapeHtml(f.name)}</span></button><div style="padding:0 7px 7px"><button class="smallbtn" style="width:100%;color:#b91c1c" onclick="removeProjectFile(${f.id})">${currentLang==='ar'?'حذف':'Delete'}</button></div></div>`).join('');
+   for(const f of files){const img=document.getElementById('photo-'+f.id);if(img)img.src=URL.createObjectURL(f.blob)}
+  }else{
+   list.style.display='grid';list.style.gridTemplateColumns='1fr';list.style.gap='8px';
+   list.innerHTML=files.map(f=>`<div style="display:flex;align-items:center;gap:8px;border:1px solid #e2e8f0;border-radius:12px;padding:10px"><div style="width:42px;height:48px;border-radius:8px;background:#fee2e2;color:#991b1b;display:grid;place-items:center;font-weight:800;flex-shrink:0">PDF</div><div style="flex:1;min-width:0"><div style="font-weight:700;overflow-wrap:anywhere">${escapeHtml(f.name)}</div><div style="font-size:12px;color:#64748b">${prettySize(f.size)}</div></div><button class="smallbtn" onclick="openProjectPdf(${f.id})">${currentLang==='ar'?'فتح':'Open'}</button><button class="smallbtn" style="color:#b91c1c" onclick="removeProjectFile(${f.id})">${currentLang==='ar'?'حذف':'Delete'}</button></div>`).join('');
+  }
+ }catch(e){list.style.display='grid';list.innerHTML=`<div class="note">${currentLang==='ar'?'تعذر فتح التخزين المحلي في هذا المتصفح. جرّب فتح الموقع في Safari.':'Local storage is unavailable in this browser. Try opening the site in Safari.'}</div>`}
+}
+function escapeHtml(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+// Open PDFs in the browser's native viewer so every page is available, including on iOS Safari.
+async function openProjectPdf(id){
+ const tab=window.open('about:blank','_blank');
+ try{
+  if(!tab){alert(currentLang==='ar'?'اسمح بفتح النوافذ المنبثقة لعرض ملف PDF كاملًا.':'Allow pop-ups to open the full PDF.');return}
+  const files=await getProjectFiles(fileProjectId);const f=files.find(x=>x.id===id);
+  if(!f||f.kind!=='pdf'){tab.close();return}
+  const url=URL.createObjectURL(f.blob);
+  tab.location.href=url;
+  // Keep the object URL alive while the native viewer is using it.
+  setTimeout(()=>{try{URL.revokeObjectURL(url)}catch(e){}},10*60*1000);
+ }catch(e){if(tab)tab.close();alert(currentLang==='ar'?'تعذر فتح ملف PDF. جرّب تنزيله أو فتحه في Safari.':'Unable to open the PDF. Try downloading it or opening it in Safari.')}
+}
+async function viewProjectFile(id){
+ try{
+  const files=await getProjectFiles(fileProjectId);const f=files.find(x=>x.id===id);if(!f)return;
+  const url=URL.createObjectURL(f.blob);
+  document.getElementById('previewTitle').textContent=f.name;
+  const content=document.getElementById('previewContent');
+  if(f.kind==='photo'){
+   content.innerHTML=`<img src="${url}" alt="${escapeHtml(f.name)}" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:10px">`;
+  }else{
+   content.style.display='block';
+   content.innerHTML=`<iframe title="${escapeHtml(f.name)}" src="${url}" style="width:100%;height:100%;min-height:60vh;border:0;border-radius:10px;background:#f8fafc"></iframe>`;
+  }
+  document.getElementById('previewModal').style.display='flex';
+  document.getElementById('previewModal').dataset.objectUrl=url;
+ }catch(e){alert(currentLang==='ar'?'تعذر فتح الملف داخل الصفحة.':'Unable to preview this file in the page.')}
+}
+function closePreview(){
+ const modal=document.getElementById('previewModal');const url=modal.dataset.objectUrl;
+ if(url)URL.revokeObjectURL(url);
+ modal.dataset.objectUrl='';
+ document.getElementById('previewContent').innerHTML='';
+ document.getElementById('previewContent').style.display='grid';
+ modal.style.display='none';
+}
+async function removeProjectFile(id){
+ if(!confirm(currentLang==='ar'?'متأكد إنك عايز تحذف الملف ده؟':'Delete this file?'))return;
+ await deleteProjectFile(id);await renderProjectFiles();
+}
+document.getElementById('pdfUpload').addEventListener('change',async e=>{
+ const files=Array.from(e.target.files||[]);for(const f of files){if(f.type==='application/pdf'||f.name.toLowerCase().endsWith('.pdf'))await saveProjectFile(fileProjectId,f,'pdf')}
+ e.target.value='';await renderProjectFiles();
+});
+document.getElementById('photoUpload').addEventListener('change',async e=>{
+ const files=Array.from(e.target.files||[]);for(const f of files){if(f.type.startsWith('image/'))await saveProjectFile(fileProjectId,f,'photo')}
+ e.target.value='';await renderProjectFiles();
+});
+document.getElementById('closeFiles').onclick=()=>document.getElementById('filesModal').style.display='none';
+document.getElementById('previewModal').addEventListener('click',e=>{if(e.target.id==='previewModal')closePreview()});
+
+function saveProjects(){try{localStorage.setItem('nkRealEstateProjectsV1',JSON.stringify(projects));return true}catch(e){alert('تعذر حفظ التعديلات على هذا الجهاز. صدّر/احتفظ بنسخة من الملف الأصلي.');return false}}
+try{const saved=localStorage.getItem('nkRealEstateProjectsV1');if(saved){const data=JSON.parse(saved);if(Array.isArray(data)&&data.length===projects.length){data.forEach(sp=>{const p=projects.find(x=>x.id===sp.id);if(p&&Array.isArray(sp.units)){Object.assign(p,sp);}})}}}catch(e){console.warn('Local saved project data could not be loaded',e)}
+let editTarget=null;
+function openEdit(id,index){editTarget={id,index};const u=projects.find(p=>p.id===id).units[index];document.getElementById('editType').value=u.type;document.getElementById('editArea').value=u.area;document.getElementById('editPrice').value=u.price;document.getElementById('editDp').value=u.dp??5;document.getElementById('editUnitDelivery').value=u.delivery||'';document.getElementById('editUnitFinishing').value=u.finishing||'';document.getElementById('editUnitBeds').value=u.beds??'';document.getElementById('editUnitLand').value=u.land??'';document.getElementById('editUnitExtra').value=u.extra||'';document.getElementById('modalback').style.display='flex'}
+document.getElementById('cancelEdit').onclick=()=>document.getElementById('modalback').style.display='none';
+document.getElementById('saveEdit').onclick=()=>{if(!editTarget)return;const p=projects.find(p=>p.id===editTarget.id),u=p.units[editTarget.index];const area=Number(document.getElementById('editArea').value),price=Number(document.getElementById('editPrice').value),dp=Number(document.getElementById('editDp').value);if(!area||price<0||!Number.isFinite(price)||dp<0||dp>100){alert('راجع المساحة والسعر ونسبة المقدم.');return}u.type=document.getElementById('editType').value.trim()||u.type;u.area=area;u.price=price;u.priceMax=null;u.dp=dp;u.delivery=document.getElementById('editUnitDelivery').value.trim();u.finishing=document.getElementById('editUnitFinishing').value.trim();const beds=document.getElementById('editUnitBeds').value,land=document.getElementById('editUnitLand').value;u.beds=beds===''?undefined:Number(beds);u.land=land===''?undefined:Number(land);u.extra=document.getElementById('editUnitExtra').value.trim();saveProjects();document.getElementById('modalback').style.display='none';render()};
+let projectEditId=null;
+function openProjectEdit(id){const p=projects.find(x=>x.id===id);if(!p)return;projectEditId=id;const fields={projName:p.name,projDeveloper:p.developer,projLocation:p.location,projType:p.type,projFinishing:p.finishing,projDelivery:p.delivery,projDp:p.dpText,projInstallment:p.installment,projCash:p.cash,projMaintenance:p.maintenance,projNotes:p.notes||''};Object.entries(fields).forEach(([id,v])=>document.getElementById(id).value=v??'');document.getElementById('projectEditModal').style.display='flex'}
+document.getElementById('cancelProjectEdit').onclick=()=>document.getElementById('projectEditModal').style.display='none';
+document.getElementById('saveProjectEdit').onclick=()=>{if(!projectEditId)return;const p=projects.find(x=>x.id===projectEditId);p.name=document.getElementById('projName').value.trim()||p.name;p.developer=document.getElementById('projDeveloper').value.trim();p.location=document.getElementById('projLocation').value.trim();p.type=document.getElementById('projType').value.trim();p.finishing=document.getElementById('projFinishing').value.trim();p.delivery=document.getElementById('projDelivery').value.trim();p.dpText=document.getElementById('projDp').value.trim();p.installment=document.getElementById('projInstallment').value.trim();p.cash=document.getElementById('projCash').value.trim();p.maintenance=document.getElementById('projMaintenance').value.trim();p.notes=document.getElementById('projNotes').value.trim();saveProjects();document.getElementById('projectEditModal').style.display='none';render()};
+
+['search','areaFilter','typeFilter'].forEach(id=>document.getElementById(id).addEventListener(id==='search'?'input':'change',render));
+document.getElementById('langToggle').addEventListener('click',()=>{currentLang=currentLang==='ar'?'en':'ar';render()});
+render();
+</script>
+</body>
+</html>
